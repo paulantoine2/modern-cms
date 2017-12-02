@@ -1,0 +1,83 @@
+<div class="container my-3">
+  <h1 class="mb-3">Ajouter un contenu</h1>
+  <form>
+    <div class="row">
+      <div class="col-sm-8 mb-5">
+        <div *ngFor="let field of fields">
+          <app-field
+            [type]="field.type"
+            [id]="field.id"
+            [label]="field.label"
+            [required]="field.required"
+            [disabled]="field.disabled"
+            [description]="field.description"
+            [defaultValue]="field.defaultValue"
+            [prefix]="field.prefix"
+            [suffix]="field.suffix"
+            [multiple]="field.multiple"
+            [options]="field.options"
+          ></app-field>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <app-field
+                [id]="'url_alias'"
+                [type]="'textfield'"
+                label="Alias d'URL"
+                description="Un url pour accéder a la page de ce contenu"
+              ></app-field>
+            </li>
+            <li class="list-group-item">
+              <h6>Statut</h6>
+              <app-field
+                [id]="'status'"
+                [type]="'radios'"
+                [options]="[
+                  {
+                    value: 'published',
+                    label: 'Publié',
+                    disabled: true
+                  },
+                  {
+                    value: 'draft',
+                    label: 'Brouillon'
+                  },
+                  {
+                    value: 'pending-review',
+                    label: 'Soumis a validation'
+                  }
+                ]"
+                defaultValue="draft"
+              ></app-field>
+            </li>
+            <li class="list-group-item">
+              <h6>Visibilité</h6>
+              <app-field
+                [id]="'visiblity'"
+                [type]="'radios'"
+                [options]="[
+                    {
+                      value: 'private',
+                      label: 'Privé'
+                    },
+                    {
+                      value: 'public',
+                      label: 'Publique'
+                    }
+                  ]"
+                defaultValue="public"
+              ></app-field>
+              <button type="button" class="btn btn-primary mt-2">Sauvegarder</button>
+              <button type="button" class="btn btn-link text-danger mt-2">Supprimer</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      </div>
+  </form>
+</div>
+

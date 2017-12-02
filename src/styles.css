@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+.dropdown-menu.dropdown-menu-right{
+  left: auto;
+  right: 0;
+}
+/*@keyframes fadeIn {*/
+  /*from {*/
+    /*opacity: 0;*/
+  /*}*/
+
+  /*to {*/
+    /*opacity: 1;*/
+  /*}*/
+/*}*/
+/*@keyframes fadeOut {*/
+  /*to {*/
+    /*opacity: 0;*/
+  /*}*/
+
+  /*from {*/
+    /*opacity: 1;*/
+  /*}*/
+/*}*/
+/*.table td .btn-sm {*/
+  /*opacity: 0;*/
+  /*animation-name: fadeOut;*/
+  /*animation-duration: 0.2s;*/
+  /*animation-fill-mode: both;*/
+/*}*/
+/*.table tr:hover .btn-sm {*/
+  /*animation-name: fadeIn;*/
+  /*animation-duration: 0.2s;*/
+  /*animation-fill-mode: both;*/
+/*}*/

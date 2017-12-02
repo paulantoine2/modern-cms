@@ -1,0 +1,15 @@
+<div *ngFor="let option of field.options; let i = index" class="form-check" [ngClass]="{'required': field.required, 'disabled': option.disabled || field.disabled}">
+  <label class="form-check-label">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="{{field.id}}"
+      id="{{field.id + i}}"
+      value="{{option.value}}"
+      [checked]="field.defaultValue === option.value"
+      [disabled]="option.disabled || field.disabled"
+    >
+    {{option.label}}
+  </label>
+</div>
+<small *ngIf="field.description !== ''" id="{{field.id + 'Help'}}" class="form-text text-muted">{{field.description}}</small>

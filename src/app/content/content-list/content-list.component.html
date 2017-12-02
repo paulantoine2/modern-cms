@@ -1,0 +1,64 @@
+<div class="container my-3">
+  <a routerLink="/content/add" class="btn btn-success float-right mt-2">Nouveau contenu</a>
+  <h1 class="mb-3">Contenu</h1>
+  <form class="row">
+    <div class="form-group col-3">
+      <label class="col-form-label" for="">Type</label>
+      <select class="form-control">
+        <option>Tous</option>
+        <option>Article</option>
+        <option>Evenement</option>
+      </select>
+    </div>
+    <div class="form-group col-3">
+      <label class="col-form-label" for="">Statut</label>
+      <select class="form-control">
+        <option>Tous</option>
+        <option>Brouillon</option>
+        <option>Publie</option>
+      </select>
+    </div>
+    <div class="form-group col-3">
+    </div>
+    <div class="form-group col-3">
+      <label class="col-form-label" for="">Recherche</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Titre, type...">
+    </div>
+  </form>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Type</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Mise a jour</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Article 1</td>
+      <td>Article</td>
+      <td>Brouillon</td>
+      <td>25/12/2017 - 12:34</td>
+      <td><button class="btn-sm btn-outline-primary">Modifier</button></td>
+    </tr>
+    <tr>
+      <td>Article 2</td>
+      <td>Article</td>
+      <td>Brouillon</td>
+      <td>25/12/2017 - 12:34</td>
+      <td><button class="btn-sm btn-outline-primary">Modifier</button></td>
+    </tr>
+    <tr>
+      <td>Article 3 lorem Ipsum</td>
+      <td>Article</td>
+      <td>Brouillon</td>
+      <td>25/12/2017 - 12:34</td>
+      <td><button class="btn-sm btn-outline-primary">Modifier</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,16 @@
+<div class="form-group" [ngClass]="{'required': field.required}">
+  <label for="{{field.id}}">{{field.label}}</label>
+  <div class="input-group">
+    <span class="input-group-addon" *ngIf="field.prefix">{{field.prefix}}</span>
+    <input
+      type="text"
+      class="form-control"
+      id="{{field.id}}"
+      [disabled]="field.disabled"
+      [required]="field.required"
+      [value]="field.defaultValue"
+    >
+    <span class="input-group-addon" *ngIf="field.suffix">{{field.suffix}}</span>
+  </div>
+  <small *ngIf="field.description !== ''" id="{{field.id + 'Help'}}" class="form-text text-muted">{{field.description}}</small>
+</div>

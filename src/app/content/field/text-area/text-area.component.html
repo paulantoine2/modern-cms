@@ -1,0 +1,12 @@
+<div class="form-group" [ngClass]="{'required': field.required}">
+  <label for="{{field.id}}">{{field.label}}</label>
+  <textarea
+    class="form-control"
+    id="{{field.id}}"
+    rows="6"
+    [disabled]="field.disabled"
+    [required]="field.required"
+    [value]="field.defaultValue">
+  </textarea>
+  <small *ngIf="field.description !== ''" id="{{field.id + 'Help'}}" class="form-text text-muted">{{field.description}}</small>
+</div>

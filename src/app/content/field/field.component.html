@@ -1,0 +1,6 @@
+<div [ngSwitch]="type">
+  <app-email *ngSwitchCase="'email'" [field]="fieldData"></app-email>
+  <app-radios *ngSwitchCase="'radios'" [field]="fieldData"></app-radios>
+  <app-text-field *ngSwitchCase="'textfield'" [field]="fieldData"></app-text-field>
+  <app-text-area *ngSwitchCase="'textarea'" [field]="fieldData"></app-text-area>
+</div>
