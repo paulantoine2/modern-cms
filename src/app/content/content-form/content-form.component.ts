@@ -15,7 +15,8 @@ export class ContentFormComponent implements OnInit {
       {
         type: 'email',
         id: 'email_input',
-        label: 'Email'
+        label: 'Email',
+        suffix: '@gmail.com'
       },
       {
         type: 'textarea',
@@ -30,6 +31,43 @@ export class ContentFormComponent implements OnInit {
           {
             label: 'Premier',
             value: '1'
+          },
+          {
+            label: 'Deuxieme',
+            value: '2'
+          }
+        ]
+      },
+      {
+        type: 'select',
+        id: 'select',
+        label: 'Test Select',
+        defaultValue: '2',
+        multiple: true,
+        options: [
+          {
+            label: 'Premier',
+            value: '1'
+          },
+          {
+            label: 'Deuxieme',
+            value: '2'
+          }
+        ]
+      },
+      {
+        type: 'checkboxes',
+        id: 'select',
+        label: 'Test checkboxes',
+        defaultValue: '2',
+        options: [
+          {
+            label: 'Premier',
+            value: '1'
+          },
+          {
+            label: 'Deuxieme',
+            value: '2'
           }
         ]
       },

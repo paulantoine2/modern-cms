@@ -4,3 +4,6 @@
   margin-left: 5px;
   color:red;
 }
+label:not(.form-check-label){
+  font-weight: 500;
+}

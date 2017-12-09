@@ -7,6 +7,7 @@ import { ContentModule } from './content/content.module';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
+import { LoginFormComponent } from './users/login-form/login-form.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     DashboardComponent,
-    UsersListComponent
+    UsersListComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ import { TextAreaComponent } from './field/text-area/text-area.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentAddListComponent } from './content-add-list/content-add-list.component';
+import { CheckboxesComponent } from './field/checkboxes/checkboxes.component';
+import { SelectComponent } from './field/select/select.component';
 
 const contentRoutes: Routes = [
   {
@@ -41,6 +43,8 @@ const contentRoutes: Routes = [
     TextAreaComponent,
     ContentListComponent,
     ContentAddListComponent,
+    CheckboxesComponent,
+    SelectComponent,
   ],
   exports: [
     ContentFormComponent

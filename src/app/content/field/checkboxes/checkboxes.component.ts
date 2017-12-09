@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Field } from '../field.interface';
 
 @Component({
-  selector: 'app-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.css']
+  selector: 'app-checkboxes',
+  templateUrl: './checkboxes.component.html',
+  styleUrls: ['./checkboxes.component.css']
 })
-export class CheckboxComponent implements OnInit {
+export class CheckboxesComponent implements OnInit {
   @Input() field: Field;
 
   constructor() { }

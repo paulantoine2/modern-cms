@@ -1,0 +1,15 @@
+<div class="form-group" [ngClass]="{'required': field.required}">
+  <label for="{{field.id}}">{{field.label}}</label>
+  <select
+    class="form-control"
+    id="{{field.id}}"
+    [multiple]="field.multiple"
+    [disabled]="field.disabled"
+    [required]="field.required">
+    <option *ngFor="let option of field.options"
+            value="{{option.value}}"
+            [selected]="option.value === field.defaultValue"
+    >{{option.label}}</option>
+  </select>
+</div>
+<small *ngIf="field.description !== ''" id="{{field.id + 'Help'}}" class="form-text text-muted">{{field.description}}</small>
