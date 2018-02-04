@@ -1,13 +1,23 @@
-<div class="container">
-  <form>
+<div class="container my-3">
+
+  <form
+    class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3"
+    (ngSubmit)="onSubmit(f)"
+    #f="ngForm"
+    [ngClass]="{'login-failed': error}"
+  >
+    <h1 class="mb-3">Connexion</h1>
     <div class="form-group">
-      <label for="user">Utilisateur</label>
-      <input type="text" class="form-control" id="user">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" class="form-control" id="username" ngModel name="username">
     </div>
     <div class="form-group">
       <label for="password">Mot de passe</label>
-      <input type="password" class="form-control" id="password">
+      <input type="password" class="form-control" id="password" ngModel name="password">
     </div>
-    <button type="submit" class="btn btn-primary">Se connecter</button>
+    <div class="form-group">
+      <small class="text-danger float-left" *ngIf="error">{{error}}</small>
+      <button type="submit" class="btn btn-primary float-right">Se connecter</button>
+    </div>
   </form>
 </div>

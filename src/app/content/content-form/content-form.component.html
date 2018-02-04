@@ -1,8 +1,15 @@
 <div class="container my-3">
-  <h1 class="mb-3">Ajouter un contenu</h1>
+  <h1 class="mb-3">{{title}}</h1>
   <form>
     <div class="row">
       <div class="col-sm-8 mb-5">
+        <app-field
+          [id]="'title'"
+          [type]="'textfield'"
+          label="Titre"
+          [defaultValue]="content.title"
+          *ngIf="loaded"
+        ></app-field>
         <div *ngFor="let field of fields">
           <app-field
             [type]="field.type"
@@ -24,53 +31,57 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <app-field
-                [id]="'url_alias'"
+                [id]="'urlAlias'"
                 [type]="'textfield'"
                 label="Alias d'URL"
                 description="Un url pour accéder a la page de ce contenu"
+                [defaultValue]="content.urlAlias"
+                *ngIf="loaded"
               ></app-field>
             </li>
             <li class="list-group-item">
-              <h6>Statut</h6>
               <app-field
                 [id]="'status'"
                 [type]="'radios'"
+                [label]="'Statut'"
                 [options]="[
                   {
-                    value: 'published',
+                    value: 3,
                     label: 'Publié',
                     disabled: true
                   },
                   {
-                    value: 'draft',
+                    value: 1,
                     label: 'Brouillon'
                   },
                   {
-                    value: 'pending-review',
+                    value: 2,
                     label: 'Soumis a validation'
                   }
                 ]"
-                defaultValue="draft"
+                [defaultValue]="content.status"
+                *ngIf="loaded"
               ></app-field>
             </li>
             <li class="list-group-item">
-              <h6>Visibilité</h6>
               <app-field
                 [id]="'visiblity'"
                 [type]="'radios'"
+                [label]="'Visibilité'"
                 [options]="[
                     {
-                      value: 'private',
+                      value: false,
                       label: 'Privé'
                     },
                     {
-                      value: 'public',
+                      value: true,
                       label: 'Publique'
                     }
                   ]"
-                defaultValue="public"
+                [defaultValue]="content.visibility"
+                *ngIf="loaded"
               ></app-field>
-              <button type="button" class="btn btn-primary mt-2">Sauvegarder</button>
+              <button type="button" class="btn btn-primary mt-2" (click)="saveContent()">Sauvegarder</button>
               <button type="button" class="btn btn-link text-danger mt-2">Supprimer</button>
             </li>
           </ul>

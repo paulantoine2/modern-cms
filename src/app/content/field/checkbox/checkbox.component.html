@@ -6,6 +6,7 @@
       name="{{field.id}}"
       id="{{field.id}}"
       value="true"
+      (change)="onChange($event)"
       [checked]="field.defaultValue === true"
       [disabled]="field.disabled"
     >

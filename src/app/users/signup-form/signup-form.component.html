@@ -1,0 +1,35 @@
+<div class="container my-3">
+
+  <form
+    class="col-12 col-sm-10 col-md-8 col-lg-6 offset-sm-1 offset-md-2 offset-lg-3"
+    (ngSubmit)="f.valid && onSubmit(f)"
+    #f="ngForm"
+    [ngClass]="{'ng-submitted': f.submitted}"
+    autocomplete="off"
+  >
+    <h1 class="mb-3">Nouveau compte</h1>
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" class="form-control" id="username" ngModel name="username" minlength="4" required
+             #username="ngModel">
+      <small *ngIf="f.submitted && !username.valid" class="form-text text-danger">Le nom d'utilisateur doit faire au
+        moins 4 caracteres.
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" ngModel name="email" email required #email="ngModel">
+      <small *ngIf="f.submitted && !email.valid" class="form-text text-danger">Email invalide.</small>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" class="form-control" id="password" ngModel name="password" minlength="4" required
+             #password="ngModel">
+      <small *ngIf="f.submitted && !password.valid" class="form-text text-danger">Le mot de passe doit faire au moins 4
+        caracteres.
+      </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary float-right">S'inscrire</button>
+  </form>
+</div>

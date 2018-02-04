@@ -3,6 +3,7 @@
   <select
     class="form-control"
     id="{{field.id}}"
+    (change)="onChange($event)"
     [multiple]="field.multiple"
     [disabled]="field.disabled"
     [required]="field.required">

@@ -1,0 +1,5 @@
+<div id="notifications">
+  <div *ngFor="let notification of notifications" class="alert alert-{{notification.style}}" [@fade] role="alert">
+    <div [innerHTML]="notification.message"></div>
+  </div>
+</div>

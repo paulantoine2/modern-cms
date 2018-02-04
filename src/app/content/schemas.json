@@ -1,0 +1,49 @@
+[
+  {
+    "id": "article",
+    "name": "Article",
+    "description": "Utilisez les articles pour des contenus possédant une temporalité tels que des actualités, des communiqués de presse ou des billets de blog.",
+    "fields": [
+      {
+        "type": "texteditor",
+        "id": "body",
+        "label": "Corps de texte"
+      },
+      {
+        "type": "radios",
+        "id": "promoted",
+        "label": "Promu",
+        "options": [
+          {
+            "label": "Oui",
+            "value": "true"
+          },
+          {
+            "label": "Non",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "type": "checkboxes",
+        "id": "tags",
+        "label": "Tags",
+        "options": [
+          {
+            "label": "Musique",
+            "value": "music"
+          },
+          {
+            "label": "Cinema",
+            "value": "cinema"
+          }
+        ]
+      },
+      {
+        "type": "textfield",
+        "id": "picture",
+        "label": "Image"
+      }
+    ]
+  }
+]

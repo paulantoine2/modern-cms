@@ -4,6 +4,7 @@
     class="form-control"
     id="{{field.id}}"
     rows="6"
+    (change)="onChange($event)"
     [disabled]="field.disabled"
     [required]="field.required"
     [value]="field.defaultValue">

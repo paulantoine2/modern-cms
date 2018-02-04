@@ -6,6 +6,7 @@
       type="email"
       class="form-control"
       id="{{field.id}}"
+      (change)="onChange($event)"
       [disabled]="field.disabled"
       [required]="field.required"
       [value]="field.defaultValue"

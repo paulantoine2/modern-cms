@@ -1,0 +1,15 @@
+<div class="form-group" [ngClass]="{'required': field.required}">
+  <label for="{{field.id}}">{{field.label}}</label>
+  <ckeditor
+    id="{{field.id}}"
+    [(ngModel)]="field.defaultValue"
+    [config]="{skin: 'minimalist,/assets/minimalist/'}"
+    [readonly]="field.disabled"
+    (change)="onChange($event)"
+    debounce="500"
+  >
+  </ckeditor>
+  <small *ngIf="field.description !== ''" id="{{field.id + 'Help'}}" class="form-text text-muted">
+    {{field.description}}
+  </small>
+</div>

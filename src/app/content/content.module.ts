@@ -7,31 +7,25 @@ import { CheckboxComponent } from './field/checkbox/checkbox.component';
 import { RadiosComponent } from './field/radios/radios.component';
 import { FieldComponent } from './field/field.component';
 import { TextAreaComponent } from './field/text-area/text-area.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentAddListComponent } from './content-add-list/content-add-list.component';
 import { CheckboxesComponent } from './field/checkboxes/checkboxes.component';
 import { SelectComponent } from './field/select/select.component';
-
-const contentRoutes: Routes = [
-  {
-    path: 'content',
-    component: ContentListComponent
-  },
-  {
-    path: 'content/add',
-    component: ContentAddListComponent
-  },
-  {
-    path: 'content/add/:type',
-    component: ContentFormComponent
-  }
-];
+import { TextEditorComponent } from './field/text-editor/text-editor.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { ContentRoutingModule } from './content-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(contentRoutes)
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    CKEditorModule,
+    ContentRoutingModule
   ],
   declarations: [
     ContentFormComponent,
@@ -45,6 +39,7 @@ const contentRoutes: Routes = [
     ContentAddListComponent,
     CheckboxesComponent,
     SelectComponent,
+    TextEditorComponent
   ],
   exports: [
     ContentFormComponent

@@ -37,26 +37,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Article 1</td>
-      <td>Article</td>
-      <td>Brouillon</td>
-      <td>25/12/2017 - 12:34</td>
-      <td><button class="btn-sm btn-outline-primary">Modifier</button></td>
-    </tr>
-    <tr>
-      <td>Article 2</td>
-      <td>Article</td>
-      <td>Brouillon</td>
-      <td>25/12/2017 - 12:34</td>
-      <td><button class="btn-sm btn-outline-primary">Modifier</button></td>
-    </tr>
-    <tr>
-      <td>Article 3 lorem Ipsum</td>
-      <td>Article</td>
-      <td>Brouillon</td>
-      <td>25/12/2017 - 12:34</td>
-      <td><button class="btn-sm btn-outline-primary">Modifier</button></td>
+    <tr *ngFor="let content of contents">
+      <td>{{content.title}}</td>
+      <td>{{content.type}}</td>
+      <td>{{content.status}}</td>
+      <td>{{content.createdAt}}</td>
+      <td>
+        <button class="btn-sm btn-outline-primary" routerLink="/content/edit/{{content.type}}/{{content.id}}">Modifier
+        </button>
+      </td>
     </tr>
     </tbody>
   </table>

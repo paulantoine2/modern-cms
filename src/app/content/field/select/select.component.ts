@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Field } from '../field.interface';
 
 @Component({
@@ -6,12 +6,12 @@ import { Field } from '../field.interface';
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.css']
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent {
   @Input() field: Field;
-
+  @Output() update = new EventEmitter<{ field: string, value: string }>();
   constructor() { }
 
-  ngOnInit() {
+  onChange(input) {
+    this.update.emit({field: this.field.id, value: input.target.value});
   }
-
 }

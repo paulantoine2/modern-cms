@@ -1,3 +1,4 @@
+<label class="form-label">{{field.label}}</label>
 <div *ngFor="let option of field.options; let i = index" class="form-check" [ngClass]="{'required': field.required, 'disabled': option.disabled || field.disabled}">
   <label class="form-check-label">
     <input
@@ -6,6 +7,7 @@
       name="{{field.id}}"
       id="{{field.id + i}}"
       value="{{option.value}}"
+      (change)="onChange($event)"
       [checked]="field.defaultValue === option.value"
       [disabled]="option.disabled || field.disabled"
     >

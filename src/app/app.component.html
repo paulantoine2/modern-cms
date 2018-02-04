@@ -5,7 +5,7 @@
   </button>
 
   <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" *ngIf="authService.isAuth()">
       <li class="nav-item">
         <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Tableau de bord</a>
       </li>
@@ -16,16 +16,29 @@
         <a class="nav-link" routerLink="/users" routerLinkActive="active">Utilisateurs</a>
       </li>
     </ul>
-    <div class="nav-item dropdown">
+    <ul class="navbar-nav" *ngIf="!authService.isAuth()">
+      <div class="nav-item">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Se connecter</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" routerLink="/signup" routerLinkActive="active">Creer un compte</a>
+      </div>
+    </ul>
+    <div class="nav-item dropdown" *ngIf="authService.isAuth()">
       <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Admin
+        {{authService.getUser().username}}
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="#">Gerer le compte</a>
-        <a class="dropdown-item" href="#">Deconnexion</a>
+        <a class="dropdown-item" (click)="authService.logout()">Deconnexion</a>
       </div>
     </div>
   </div>
 </nav>
+<app-notifications></app-notifications>
+<ng-progress
+  [color]="'#007bff'"
+  [spinner]="false"
+  [thick]="true"></ng-progress>
 <router-outlet></router-outlet>
 

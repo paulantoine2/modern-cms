@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Field } from './field.interface';
+import { ContentService } from '../content.service';
 
 @Component({
   selector: 'app-field',
@@ -21,7 +22,8 @@ export class FieldComponent implements OnInit {
 
   fieldData: Field;
 
-  constructor() { }
+  constructor(private Content: ContentService) {
+  }
 
   ngOnInit() {
     this.fieldData = {
@@ -38,4 +40,7 @@ export class FieldComponent implements OnInit {
     };
   }
 
+  onUpdateData(data) {
+    this.Content.updateField(data);
+  }
 }

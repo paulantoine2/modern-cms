@@ -9,6 +9,7 @@
       [disabled]="field.disabled"
       [required]="field.required"
       [value]="field.defaultValue"
+      (change)="onChange($event)"
     >
     <span class="input-group-addon" *ngIf="field.suffix">{{field.suffix}}</span>
   </div>
